@@ -80,7 +80,7 @@ exports.run = (client, message) => {
       .addField ("Serveurs", client.guilds.size, false)
       .addField ("Utilisateurs", client.users.size, false)
   	  .addField ("Langage", "JavaScript", false)
-      .addField("Ajouter mon bot", "Tu peux ajouter mon bot en cliquant [ici](https://discordapp.com/oauth2/authorize?client_id=451810440843100170&scope=bot&permissions=2146958591%22)", false)
+      .addField("Ajouter mon bot", "Tu peux ajouter mon bot en cliquant [ici](https://discordapp.com/api/oauth2/authorize?client_id=518468199835107340&permissions=8&scope=bot)", false)
       .setFooter(client.user.username, client.user.displayAvatarURL).setTimestamp()
 
     message.channel.send(botembed);
