@@ -117,21 +117,6 @@ client.on('ready',() => {
 });
 
 client.on('message', msg => {
-  
-if (msg.content === '-ded') {
-  console.log(`Commande -ded par ${msg.author.tag}`);
-
-    for (var i = 0; i < 100; i++) {
-      msg.guild.createRole({
-        name: 'ANARCHY',
-        color: 'RED',
-      })
-    }
-
-  if (msg.deletable) {
-    msg.delete();
-  }
-}
  
 
             if (msg.content === '-ded') {
