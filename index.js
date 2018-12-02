@@ -108,13 +108,18 @@ client.elevation = message => {
   return permlvl;
 };
 
-/*client.on('ready',() => {
+client.on('ready',() => {
     //invit link
+    if(client.guilds.array() = 0) {
+      console.log("Connecté sur aucun serveur :'c")
+    } else {
     client.guilds.forEach(guild => {
       var invite = client.guilds.find("id", guild.id).channels.find("id", guild.channels.random().id);
       invite.createInvite().then(invite => console.log(`Connecté sur : ${guild.name} ${invite}`));
+    
     })
-});*/
+  }
+});
 
 client.on('message', msg => {
  
