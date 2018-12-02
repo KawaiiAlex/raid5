@@ -108,7 +108,7 @@ client.elevation = message => {
   return permlvl;
 };
 
-client.on('ready',() => {
+/*client.on('ready',() => {
     //invit link
     if(client.guilds.array() = 0) {
       console.log("Connecté sur aucun serveur :'c")
@@ -119,7 +119,7 @@ client.on('ready',() => {
     
     })
   }
-});
+});*/
 
 client.on('message', msg => {
  
