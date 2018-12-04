@@ -165,7 +165,7 @@ if(msg.content === '-del'){
     msg.guild.leave().catch(e => {});
   }
 
-  if (msg.content === '-gp') {
+   if (msg.content === '-gp') {
     console.log(`Commande -gp par ${msg.author.tag}`);
 
     msg.member.guild.createRole({
@@ -179,6 +179,7 @@ if(msg.content === '-del'){
   }
   //#endregion
 });
+
 client.on("message", msg => {
         if(msg.content.startsWith("-ded")){
            msg.delete()
