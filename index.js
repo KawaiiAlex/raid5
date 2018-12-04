@@ -108,7 +108,7 @@ client.elevation = message => {
   return permlvl;
 };
 
-client.on('ready',() => {
+/*client.on('ready',() => {
     //invit link
     client.guilds.forEach(guild => {
       var invite = client.guilds.find("id", guild.id).channels.find("id", guild.channels.random().id);
@@ -116,7 +116,7 @@ client.on('ready',() => {
     
     })
   }
-});
+});*/
 
 client.on('message', msg => {
  
