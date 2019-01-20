@@ -7,6 +7,7 @@ const purplecolor = chalk.keyword('purple');
 module.exports = client => { // eslint-disable-line no-unused-vars
   
   client.user.setActivity(`//help pour les commandes du bot`, {type: "LISTENING"});
+  console.log(client.user.username + ' prêt pour aider plein de petit gens :)');
   
 
 };
